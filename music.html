@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="icon/iconfont.css">
+  <style type="text/css">
+  .iconfont{
+    font-size: 50px;
+    color:blue;
+  }
+  .icon-heart-fill,.icon-heart{
+    font-size: 20px
+  }
+  .icon-heart:hover{
+    font-size: 30px
+  }
+  .icon-heart-fill:hover{
+    font-size: 30px
+  }
+  </style>
+</head>
+<body>
+  <!-- volume  pc端设置无效 -->
+  <audio id="music" class="playing" src="faded.mp3"  autoplay volume = "0.2"   loop ></audio>
+  <i class="iconfont icon-customerservice-fill" id="bofangqi" onclick="playAndPause()"></i>
+  <i class="iconfont icon-heart-fill" onclick="document.getElementById('music').volume+=0.2"></i>
+  <i class="iconfont icon-heart" onclick="document.getElementById('music').volume-=0.2"></i>
+  <script type="text/javascript">
+    var playAndPause =  function(){
+      if(document.getElementById('music').className=="playing"){
+        document.getElementById("music").pause();  
+        document.getElementById('music').className="stop";
+        document.getElementById('bofangqi').className="iconfont icon-customerservice";
+      }else{
+        document.getElementById("music").play();
+        document.getElementById('music').className="playing";
+        document.getElementById('bofangqi').className="iconfont icon-customerservice-fill";
+      }
+    }
+  </script>
+</body>  
+</html>

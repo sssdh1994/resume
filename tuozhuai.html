@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+    #tuozhuai{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: absolute;
+    }
+  </style>
+  <script type="text/javascript">
+ window.onload=function (){
+  var tuozhuai=document.getElementById('tuozhuai');
+  var disx = 0
+  var disy = 0
+   tuozhuai.onmousedown=function (ev){
+    var oEvent=ev||event;
+    
+    disx=oEvent.clientX-tuozhuai.offsetLeft;
+    disy=oEvent.clientY-tuozhuai.offsetTop;
+    
+    document.onmousemove=function (ev){
+      var oEvent=ev||event;
+      var l=oEvent.clientX-disx;
+      var t=oEvent.clientY-disy;
+      
+        if(l<0)
+      {
+        l=0;
+      }
+      else if(l>document.documentElement.clientWidth-tuozhuai.offsetWidth)
+      {
+        l=document.documentElement.clientWidth-tuozhuai.offsetWidth;
+      }
+      
+      if(t<0)
+      {
+        t=0;
+      }
+      else if(t>document.documentElement.clientHeight-tuozhuai.offsetHeight)
+      {
+        t=document.documentElement.clientHeight-tuozhuai.offsetHeight;
+      }
+      tuozhuai.style.left=l+'px';
+      tuozhuai.style.top=t+'px';
+    };
+    
+    document.onmouseup=function (){
+      document.onmousemove=null;
+      document.onmouseup=null;
+    };
+  };
+};
+  </script>
+</head>
+<body>
+  <div id="tuozhuai"></div>
+</body>
+</html>

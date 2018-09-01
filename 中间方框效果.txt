@@ -1,0 +1,16 @@
+div{
+  border:solid 1px;
+  border-radius:20px;
+  width: 400px;
+  height: 200px;
+  position:absolute;
+  top:calc(50% - 100px);
+  left:calc(50% - 200px);
+  transition:0.5s;
+  background-color:rgba(255,255,255,0);
+  
+}
+div:hover{
+  background-color:rgba(255,255,255,0.7);
+
+}

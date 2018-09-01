@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <style type="text/css">
+  #move{
+    height: 100px;
+    width: 100px;
+    background-color:red;
+    position: absolute;
+  }
+  </style>
+  <script type="text/javascript">
+  var speedx = 0
+  var speedy = 0
+  window.onload=function (){
+    var div=document.getElementById('move');
+    var disx = 0
+    var disy = 0
+    var lastx = 0
+    var lasty = 0
+    div.onmousedown=function (ev){
+      var oEvent=ev||event;
+    
+      disx=oEvent.clientX-div.offsetLeft;
+      disy=oEvent.clientY-div.offsetTop;
+    
+      document.onmousemove=function (ev){
+        var oEvent=ev||event;
+        var l=oEvent.clientX-disx;
+        var t=oEvent.clientY-disy;
+      
+        if(l<0)
+        {
+          l=0;
+        }
+        else if(l>document.documentElement.clientWidth-div.offsetWidth)
+        {
+          l=document.documentElement.clientWidth-div.offsetWidth;
+        }
+        
+        if(t<0)
+        {
+          t=0;
+        }
+        else if(t>document.documentElement.clientHeight-div.offsetHeight)
+        {
+          t=document.documentElement.clientHeight-div.offsetHeight;
+        }
+        div.style.left=l+'px';
+        div.style.top=t+'px';
+
+        speedx = l - lastx
+        speedy = t - lasty
+        lastx = l 
+        lasty = t
+      };
+    
+      document.onmouseup=function (){
+        document.onmousemove=null;
+        document.onmouseup=null;
+        startmove()
+      };
+      clearInterval(timer)
+    };
+  };
+  var timer = null
+
+  function startmove(){
+    timer = setInterval(function(){
+      var div = document.getElementById('move');
+      speedy +=2
+      var width = div.offsetLeft+speedx
+      var height = div.offsetTop+speedy
+
+      if(height>=document.documentElement.clientHeight - div.offsetHeight){
+        speedy *= -0.85
+        speedx *= 0.9
+        height = document.documentElement.clientHeight - div.offsetHeight
+      }else if(height<=0){
+        speedy *= -0.85
+        speedx *= 0.9
+        height = 0
+      }
+
+      if(width>=document.documentElement.clientWidth - div.offsetWidth){
+        speedx *= -0.9
+        width = document.documentElement.clientWidth - div.offsetWidth
+      }else if(width<=0){
+        speedx *= -0.9  
+        width = 0   
+      }
+      if(Math.abs(speedx)<1)
+      {
+        speedx=0;
+        // clearInterval(timer)
+      }
+      
+      if(Math.abs(speedy)<1)
+      {
+        speedy=0;
+        // clearInterval(timer)
+      }
+      
+      div.style.left=width+'px';
+      div.style.top=height+'px';
+    },30)
+  }
+  startmove()
+  </script>
+</head>
+<body ondragstart="return false">
+  <div ><img src="狗头.jpg" id="move"></div>
+  
+</body>
+</html>
