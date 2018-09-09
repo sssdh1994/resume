@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style>
+  *{
+    -webkit-touch-callout: none;  
+    -webkit-user-select: none;  
+    -khtml-user-select: none;  
+    -moz-user-select: none;  
+    -ms-user-select: none;  
+    user-select: none;  
+    margin: 0;
+    padding: 0;
+  }
+  body{
+    width: 100%;
+  }
+  .xian{
+    width: 80%;
+    height: 20px;
+    border:1px solid black;
+    border-radius:4em;
+    position:absolute;
+    top:calc(50% - 10px);
+    left:calc(10%)
+  }
+  #tuozhuai{
+    cursor: pointer;
+    width: 40px;
+    height: 20px;
+    border-radius:4em;
+    background-color:red;
+    position:absolute;
+  }
+  .up,.down{
+    width: 80%;
+    height: 200px;
+    border:1px solid black;
+    position:absolute;
+    left:calc(10%)
+  }
+  .up{
+    top:calc(50% - 220px)
+  }
+  .down{
+    top:calc(50% + 20px)
+  }
+  .html{
+    background-color: red;
+    display:inline-block;
+    height: 100%;
+  } 
+  .up,.down{
+    width: 80%;
+    height: 200px;
+    border:1px solid black;
+    position:absolute;
+    left:calc(10%)
+  }
+  .up{
+    top:calc(50% - 220px)
+  }
+  .down{
+    top:calc(50% + 20px)
+  }
+  #html,#html-move,#css,#css-move,#js,#js-move{
+    background-color: red ;
+    display:inline-block;
+    height: 100%;
+    transition:0.5s linear;
+  } 
+  #html-move,#css-move,#js-move{
+    opacity:0 
+  }
+  #css,#js{
+    margin-left:120px;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+<div class="xian">
+  <div id="tuozhuai"></div>
+</div>
+<div class="up">
+  <p id="html">html</p>
+  <p id="html-move">html</p>
+  <p id="js">html</p>
+  <p id="js-move">html</p>
+</div>
+<div class="down">
+  <p id="css">css</p>
+  <p id="css-move">css</p>
+</div>
+
+
+<script>
+
+  var tuozhuai=document.getElementById('tuozhuai');
+  var disx = 0
+  var disy = 0
+   tuozhuai.onmousedown=function (ev){
+    var oEvent=ev||event;
+    
+    disx=oEvent.clientX-tuozhuai.offsetLeft;
+    disy=oEvent.clientY-tuozhuai.offsetTop;
+    
+    document.onmousemove=function (ev){
+      var oEvent=ev||event;
+      var l=oEvent.clientX-disx;
+      var t=oEvent.clientY-disy;
+      var xian = document.getElementsByClassName('xian')[0].offsetWidth
+      var htmlmove = document.getElementById('html-move')
+      var cssmove = document.getElementById('css-move')
+      var jsmove = document.getElementById('js-move')
+      
+      if(l<0){
+        l=0;
+      }else if(l>xian-42) {
+        l=xian-42;
+      }
+      tuozhuai.style.left=l+'px';
+//       tuozhuai.style.top=t+'px';
+      if(l>=40){
+        htmlmove.style.opacity = '1'
+      }else {
+        htmlmove.style.opacity = '0'
+      }
+      if(l>120){
+        cssmove.style.opacity = '1'
+      }else {
+        cssmove.style.opacity = '0'
+      }
+      if(l>240){
+        jsmove.style.opacity = '1'
+      }else {
+        jsmove.style.opacity = '0'
+      }
+    };
+    
+    document.onmouseup=function (){
+      document.onmousemove=null;
+      document.onmouseup=null;
+    };
+  };
+</script>
+
+
+
+</body>
+</html>

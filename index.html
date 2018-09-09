@@ -48,6 +48,7 @@
       transform:scale(1.5,1.5)
     }
     *{
+      
       margin: 0;
       padding: 0
     }
@@ -65,35 +66,35 @@
     }
     /*背景图片*/
     .bg1{
-      background-image:url(img/bg1.jpg);
+      background-image:url(newimg/bg1.jpg);
     }
     .bg2{
-      background-image:url(img/bg2.jpg);
+      background-image:url(newimg/bg2.jpg);
     }
     .bg3{
-      background-image:url(img/bg3.jpg);
+      background-image:url(newimg/bg3.jpg);
     }
     .bg4{
-      background-image:url(img/bg4.jpg);
+      background-image:url(newimg/bg4.jpg);
     }
     .bg5{
-      background-image:url(img/bg5.jpg);
+      background-image:url(newimg/bg5.jpg);
     }
     .bg6{
-      background-image:url(img/bg6.jpg);
+      background-image:url(newimg/bg6.jpg);
     }
     .bg7{
-      background-image:url(img/bg7.jpg);
+      background-image:url(newimg/bg7.jpg);
     }
     .bg{
       width: 100vw;
       height: 100vh;
       background-size: 100vw 100vh;
-      -webkit-filter: grayscale(85%) brightness(92%);
+/*      -webkit-filter: grayscale(85%) brightness(92%);
       -moz-filter: grayscale(85%) brightness(92%);
       -ms-filter: grayscale(85%) brightness(92%);
       -o-filter: grayscale(85%) brightness(92%);
-      filter: grayscale(85%) brightness(92%);
+      filter: grayscale(85%) brightness(92%);*/
     }
     p{
       width: 100vw;
@@ -173,10 +174,146 @@
       overflow: hidden;
       z-index:103;
     }
+    .xian{
+      width: 80%;
+      height: 20px;
+      border:1px solid black;
+      border-radius:4em;
+      position:absolute;
+      top:calc(50% - 10px);
+      left:calc(10%)
+    }
+    #tuozhuai{
+      cursor: pointer;
+      width: 40px;
+      height: 20px;
+      border-radius:4em;
+      background-color:red;
+      position:absolute;
+      z-index: 100;
+    }
+    .up,.down{
+      width: 80%;
+      height: 200px;
+      border:1px solid black;
+      position:absolute;
+      left:calc(10%)
+    }
+    .up{
+      top:calc(50% - 220px)
+    }
+    .down{
+      top:calc(50% + 20px)
+    }
+    .html{
+      background-color: red;
+      display:inline;
+      height: 100%;
+      width: 100%;
+    }
+    .up,.down{
+      width: 80%;
+      height: 200px;
+      border:1px solid black;
+      position:absolute;
+      left:calc(10%)
+    }
+    .up{
+      top:calc(50% - 220px)
+    }
+    .down{
+      top:calc(50% + 20px)
+    }
+    #html,#html-move,#css,#css-move,#js,#js-move{
+      background-color: red ;
+      display:inline;
+      height: 100%;
+      transition:0.5s linear;
+    } 
+    #html-move,#css-move,#js-move{
+      border:solid 1px;
+     /* border-radius:20px;
+      width: 400px;
+      height: 200px;
+      position:absolute;
+      top:calc(50% - 100px);
+      left:calc(50% - 200px);*/
+      transition:0.5s;
+      background-color:rgba(255,255,255,0.7);
+      opacity:0 
+    }
+    #css,#js{
+      margin-left:120px;
+    }
+    #container{
+      width:800px;
+      height: 484px;
+      position:absolute;
+      top:calc(50% - 242px);
+      left:calc(50% - 400px);
+      transition:0.5s;
+      background-color:rgba(255,255,255,0);
+      
+    }
+    #container:hover{
+      background-color:rgba(255,255,255,0.7);
+
+    }
+    .in1,.in2{
+      width: 480px;
+      height: 240px;
+      border: solid black;
+    }
+    .in3{
+      width: 318px;
+      height: 482px;
+      border:1px solid black;
+      float: right;
+    }
+    .in1{
+      border-width:0 1px 1px 0;
+    }
+    .in2{
+      border-width:1px 1px 0 0;
+    }
+    .in3{
+      border-width:0 0 0 1px;
+    }
+    .dubaibox{
+      height:350px;
+      width:500px;
+      border:1px solid black;
+      position:relative;
+      display:flex;
+      flex-direction: column;
+      justify-content:center;
+    }
+    .top-right{
+      height: 140px;
+      width: 150px;
+      border:solid orange;
+      border-width:10px 10px 0 0;
+      position:absolute;
+      right:0;
+      top:0;
+    }
+    .bottom-left{
+      height: 140px;
+      width: 150px;
+      border:solid orange;
+      border-width:0 0 10px 10px;
+      position:absolute;
+      bottom:0
+    }
+    .dubaibox p{
+      width: 100%;
+      text-align:center;
+      vertical-align:middle;
+    }
   </style>
 </head>
 <body>
-   <!-- volume  pc端设置无效 -->
+   <!-- 音乐播放器 volume  pc端设置无效 -->
   <audio id="music" class="playing" src="faded.mp3"  autoplay volume = "0.2"   loop ></audio>
   <i class="iconfont icon-customerservice-fill" id="bofangqi" onclick="playAndPause()"></i>
   <i class="iconfont icon-heart-fill" onclick="document.getElementById('music').volume+=0.2"></i>
@@ -184,6 +321,7 @@
   <div class="swiper-container swiper-container-vertical">
     <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
         <div class="swiper-slide swiper-slide1">
+          <!-- 第一页首页 -->
           <div class="bg bg1">
             <div class="card">
               <p>1111111111111</p>
@@ -194,6 +332,7 @@
           </div>
         </div>
         <div class="swiper-slide swiper-slide2">
+          <!-- 第二页个人介绍 -->
           <div class="photo">
             <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=329151883,2564818574&fm=27&gp=0.jpg" alt="" >
           </div>
@@ -205,34 +344,55 @@
           </div>
         </div>
         <div class="swiper-slide swiper-slide3">
+          <!-- 第三页学习经历 -->
           <div class="bg bg3">
-            <p>sdggsdgsdgsdgfsdfdsfsdg<br>
-              sdggsdgsdgsdgfsdfdsfsdg
-            </p>
+            <div class="xian">
+              <div id="tuozhuai"></div>
+            </div>
+            <div class="up">
+              <p id="html">html</p>
+              <p id="html-move">html</p>
+              <p id="js">html</p>
+              <p id="js-move">html</p>
+            </div>
+            <div class="down">
+              <p id="css">css</p>
+              <p id="css-move">css</p>
+            </div>
           </div>
         </div>
         <div class="swiper-slide swiper-slide4">
+          <!-- 第四页技能掌握 -->
           <div class="bg bg4">
-            <p>sdggsdgsdgsdgfsdfdsfsdg<br>
-              sdggsdgsdgsdgfsdfdsfsdg
-            </p>
+          <!-- 内容 -->
           </div>
         </div>
         <div class="swiper-slide swiper-slide5">
+          <!-- 第五页学习方式 -->
           <div class="bg bg5">
-            <p>sdggsdgsdgsdgfsdfdsfsdg<br>
-              sdggsdgsdgsdgfsdfdsfsdg
-            </p>
+            <div id="container">
+              <div class="in3">3</div>
+              <div class="in1">1</div>
+              <div class="in2">2</div>
+            </div>
           </div>
         </div>
         <div class="swiper-slide swiper-slide6">
+          <!-- 第六页联系本人 -->
           <div class="bg bg6">
-            <p>sdggsdgsdgsdgfsdfdsfsdg<br>
-              sdggsdgsdgsdgfsdfdsfsdg
-            </p>
+            <div class="dubaibox">
+              <p>aaaaa</p>
+              <p>bbbbb</p>
+              <p>ccccc</p>
+              <p>ddddd</p>
+              <p>eeeee</p>
+              <div class="top-right"></div>
+              <div class="bottom-left"></div>
+            </div>
           </div>
         </div>
         <div class="swiper-slide swiper-slide7">
+          <!-- 第七页H5游戏 -->
           <div class="bg bg7">
             <p>sdggsdgsdgsdgfsdfdsfsdg<br>
               sdggsdgsdgsdgfsdfdsfsdg
@@ -254,6 +414,55 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.js"></script>
   <script type="text/javascript">
+    // 中间红色框拖拽
+    var tuozhuai=document.getElementById('tuozhuai');
+    var disx = 0
+    var disy = 0
+     tuozhuai.onmousedown=function (ev){
+      var oEvent=ev||event;
+      
+      disx=oEvent.clientX-tuozhuai.offsetLeft;
+      disy=oEvent.clientY-tuozhuai.offsetTop;
+      
+      document.onmousemove=function (ev){
+        var oEvent=ev||event;
+        var l=oEvent.clientX-disx;
+        var t=oEvent.clientY-disy;
+        var xian = document.getElementsByClassName('xian')[0].offsetWidth
+        var htmlmove = document.getElementById('html-move')
+        var cssmove = document.getElementById('css-move')
+        var jsmove = document.getElementById('js-move')
+        
+        if(l<0){
+          l=0;
+        }else if(l>xian-42) {
+          l=xian-42;
+        }
+        tuozhuai.style.left=l+'px';
+  //       tuozhuai.style.top=t+'px';
+        if(l>=40){
+          htmlmove.style.opacity = '1'
+        }else {
+          htmlmove.style.opacity = '0'
+        }
+        if(l>120){
+          cssmove.style.opacity = '1'
+        }else {
+          cssmove.style.opacity = '0'
+        }
+        if(l>240){
+          jsmove.style.opacity = '1'
+        }else {
+          jsmove.style.opacity = '0'
+        }
+      };
+    
+    document.onmouseup=function (){
+      document.onmousemove=null;
+      document.onmouseup=null;
+    };
+  };
+    // 设置音乐播放器点击暂停函数
     var playAndPause =  function(){
       if(document.getElementById('music').className=="playing"){
         document.getElementById("music").pause();  
