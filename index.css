@@ -1,0 +1,297 @@
+
+    /*音乐播放器*/
+    .iconfont{
+      font-size: 45px;
+      color:white;
+      position: absolute;
+      right: 11px;
+      bottom: 11px;
+      z-index: 10;
+      cursor: pointer;  
+    }
+    .icon-customerservice-fill,.icon-customerservice{
+      display:inline-block;
+      animation: myaction1 5s linear infinite;
+      transform:rotate(360deg);
+    }
+    @keyframes myaction1{
+      from{
+        transform:rotate(0deg);
+      }
+      to{
+        transform:rotate(360deg);
+      }
+    }
+    .icon-heart-fill,.icon-heart{
+      font-size: 20px;
+    }
+    .icon-heart-fill{
+      bottom: 58px;
+      right: 33px;
+    }
+    .icon-heart{
+      bottom: 58px;
+      right: 13px;
+    }
+    .icon-heart:hover{
+      transform:scale(1.5,1.5)
+    }
+    .icon-heart-fill:hover{
+      transform:scale(1.5,1.5)
+    }
+    *{
+      
+      margin: 0;
+      padding: 0
+    }
+    .swiper-container{
+      width: 100vw;
+      height: 100vh
+    }
+    .swiper-slide1{
+      
+    }
+    .swiper-slide2{
+      
+    }
+    .swiper-slide3{
+    }
+    /*背景图片*/
+    .bg1{
+      background-image:url(newimg/bg1.jpg);
+    }
+    .bg2{
+      background-image:url(newimg/bg2.jpg);
+    }
+    .bg3{
+      background-image:url(newimg/bg3.jpg);
+    }
+    .bg4{
+      background-image:url(newimg/bg4.jpg);
+    }
+    .bg5{
+      background-image:url(newimg/bg5.jpg);
+    }
+    .bg6{
+      background-image:url(newimg/bg6.jpg);
+    }
+    .bg7{
+      background-image:url(newimg/bg7.jpg);
+    }
+    .bg{
+      width: 100vw;
+      height: 100vh;
+      background-size: 100vw 100vh;
+/*      -webkit-filter: grayscale(85%) brightness(92%);
+      -moz-filter: grayscale(85%) brightness(92%);
+      -ms-filter: grayscale(85%) brightness(92%);
+      -o-filter: grayscale(85%) brightness(92%);
+      filter: grayscale(85%) brightness(92%);*/
+    }
+    p{
+      width: 100vw;
+      height: 100vh;
+      border: 0 solid black
+    }
+    /*分页器*/
+    .swiper-pagination-bullet{
+      height: 16px;
+      width: 16px;
+      transition: 0.3s linear ;
+      opacity: 0.5
+    }
+    .swiper-pagination-bullet:hover{
+      background: #007aff;
+      opacity: 1;
+      transform:scale(1.6,1.6);
+    }
+    .swiper-pagination-bullet-active{
+      animation: myaction2 1s linear infinite; 
+    }
+    @keyframes myaction2{
+      from{
+        transform:scale(1,1);
+      }
+      to{
+        transform:scale(1.6,1.6);
+      }
+    }
+    .card,.card-photo{
+      border-radius:20px;
+      width: 700px;
+      height: 380px;
+      position:absolute;
+      top:calc(50% - 190px);
+      left:calc(50% - 350px);
+      transition:0.5s;
+      background-color:rgba(255,255,255,0);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    .card-photo{
+      height: 300px;
+      top:calc(50% - 110px);
+    }
+    .card:hover,.card-photo:hover{
+      background-color:rgba(255,255,255,0.3);
+      box-shadow: 0 0px 30px 15px rgba(0,0,0,0.65);
+      border:solid 1px;
+    }
+    .card p{
+      width: 100%;
+      height: 100%;
+      line-height: 95px;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .container{
+      position:absolute;
+      top:calc(50%);
+      left:calc(50% );
+      z-index:103;
+    }
+    img{
+      overflow: hidden;
+      width: 150px;
+      height:150px;
+    }
+    .photo{
+      width: 150px;
+      height: 150px;
+      border-radius:50%;
+      position:absolute;
+      top:calc(50% - 185px);
+      left:calc(50% - 75px);
+      overflow: hidden;
+      z-index:103;
+    }
+    .xian{
+      width: 80%;
+      height: 20px;
+      border:1px solid black;
+      border-radius:4em;
+      position:absolute;
+      top:calc(50% - 10px);
+      left:calc(10%)
+    }
+    #tuozhuai{
+      cursor: pointer;
+      width: 40px;
+      height: 20px;
+      border-radius:4em;
+      background-color:red;
+      position:absolute;
+      z-index: 100;
+    }
+    .up,.down{
+      width: 80%;
+      height: 200px;
+      border:1px solid black;
+      position:absolute;
+      left:calc(10%)
+    }
+    .up{
+      top:calc(50% - 220px)
+    }
+    .down{
+      top:calc(50% + 20px)
+    }
+    .html{
+      background-color: red;
+      display:inline;
+      height: 100%;
+      width: 100%;
+    }
+    .up,.down{
+      width: 80%;
+      height: 200px;
+      border:1px solid black;
+      position:absolute;
+      left:calc(10%)
+    }
+    .up{
+      top:calc(50% - 220px)
+    }
+    .down{
+      top:calc(50% + 20px)
+    }
+    #html,#html-move,#css,#css-move,#js,#js-move{
+      background-color: red ;
+      display:inline;
+      height: 100%;
+      transition:0.5s linear;
+    } 
+    #html-move,#css-move,#js-move{
+      border:solid 1px;
+     /* border-radius:20px;
+      width: 400px;
+      height: 200px;
+      position:absolute;
+      top:calc(50% - 100px);
+      left:calc(50% - 200px);*/
+      transition:0.5s;
+      background-color:rgba(255,255,255,0.7);
+      opacity:0 
+    }
+    #css,#js{
+      margin-left:120px;
+    }
+    #container{
+      width:65%;
+      height: 60%;
+      position:absolute;
+      top:calc(50% - 30%);
+      left:calc(50% - 32.5%);
+      border-bottom:5px solid white;
+      transition:0.5s;
+      background-color:rgba(255,255,255,0);
+      display: flex;
+      
+    }
+    #container:hover{
+      background-color:rgba(255,255,255,0.7);
+
+    }
+    .in1,.in2,.in3{
+      height: 100%;
+      width: 100%;
+
+    }
+    .in1{
+      border-right:5px solid white;
+    }
+    .in2{
+      border-right:5px solid white;
+    }
+    .dubaibox{
+      height:350px;
+      width:500px;
+      border:1px solid black;
+      position:relative;
+      display:flex;
+      flex-direction: column;
+      justify-content:center;
+    }
+    .top-right{
+      height: 140px;
+      width: 150px;
+      border:solid orange;
+      border-width:10px 10px 0 0;
+      position:absolute;
+      right:0;
+      top:0;
+    }
+    .bottom-left{
+      height: 140px;
+      width: 150px;
+      border:solid orange;
+      border-width:0 0 10px 10px;
+      position:absolute;
+      bottom:0
+    }
+    .dubaibox p{
+      width: 100%;
+      text-align:center;
+      vertical-align:middle;
+    }
