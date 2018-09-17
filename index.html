@@ -15,6 +15,22 @@
   <i class="iconfont icon-customerservice-fill" id="bofangqi" onclick="playAndPause()"></i>
   <i class="iconfont icon-heart-fill" onclick="document.getElementById('music').volume+=0.2"></i>
   <i class="iconfont icon-heart" onclick="document.getElementById('music').volume-=0.2"></i>
+  <div class="button">
+    <div class="shang"></div>
+    <div class="zhong"></div>
+    <div class="xia"></div>
+  </div>
+  <div id="aslide" >
+    <div class="box">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+    </div>
+  </div>
   <div class="swiper-container swiper-container-vertical">
     <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
         <div class="swiper-slide swiper-slide1">
@@ -220,7 +236,61 @@
       $('.card .circleLight').css('background', 'radial-gradient(circle at ' + mouse.X + 'px ' + mouse.Y + 'px, #FEFFFB, transparent)');
       $('.card').css('transform','scale(1.03) translate(' + (block.CX * 0.05) + 'px, ' + (block.CY * 0.05) + 'px) rotateX(' + (block.CY * 0.05) + 'deg) rotateY(' + (block.CX * 0.05) + 'deg)')
     }, 20);
-
+    var btn = document.getElementsByClassName('button')
+    var aslide = document.getElementById('aslide')
+    var isOut = false
+    var shang = document.getElementsByClassName('shang')
+    var zhong = document.getElementsByClassName('zhong')
+    var xia = document.getElementsByClassName('xia')
+    var boxGoTo = document.querySelectorAll('.box div')
+    // 侧边栏点击按钮功能
+    btn[0].onclick = function(e){
+      if(!isOut){
+        aslide.setAttribute('style','width:20%') 
+        shang[0].setAttribute('style','transform-origin:left;transform:rotate(45deg);margin-left:15px') 
+        zhong[0].setAttribute('style','width:0') 
+        xia[0].setAttribute('style','transform-origin:left;transform:rotate(-45deg);margin-left:15px')
+        btn[0].setAttribute('style','background-color:rgb(51,122,183);')
+        isOut = true
+      }else{
+        aslide.setAttribute('style','width:0%') 
+        shang[0].setAttribute('style','margin:12px 0 0 10px;transform-origin:left;') 
+        zhong[0].setAttribute('style','margin:5px 0 0 10px;transform-origin:left;')
+        xia[0].setAttribute('style','margin:5px 0 0 10px;transform-origin:left;')
+        btn[0].removeAttribute('style','background-color:rgb(51,122,183);')
+        isOut = false
+      }
+    }
+    // console.log(boxGoTo[0])
+    var swiperActive = document.getElementsByClassName('swiper-wrapper')
+    boxGoTo[0].onclick = function(){
+      swiperActive[0].setAttribute('style','transform: translate3d(0px, -639px, 0px);transition-duration: 300ms')
+      btn[0].onclick()
+    }
+    boxGoTo[1].onclick = function(){
+      swiperActive[0].setAttribute('style','transform: translate3d(0px, -1278px, 0px);transition-duration: 300ms')
+      btn[0].onclick()
+    }
+    boxGoTo[2].onclick = function(){
+      swiperActive[0].setAttribute('style','transform: translate3d(0px, -1917px, 0px);transition-duration: 300ms')
+      btn[0].onclick()
+    }
+    boxGoTo[3].onclick = function(){
+      swiperActive[0].setAttribute('style','transform: translate3d(0px, -2556px, 0px);transition-duration: 300ms')
+      btn[0].onclick()
+    }
+    boxGoTo[4].onclick = function(){
+      swiperActive[0].setAttribute('style','transform: translate3d(0px, -3195px, 0px);transition-duration: 300ms')
+      btn[0].onclick()
+    }
+    boxGoTo[5].onclick = function(){
+      swiperActive[0].setAttribute('style','transform: translate3d(0px, -3834px, 0px);transition-duration: 300ms')
+      btn[0].onclick()
+    }
+    boxGoTo[6].onclick = function(){
+      swiperActive[0].setAttribute('style','transform: translate3d(0px, -4473px, 0px);transition-duration: 300ms')
+      btn[0].onclick()
+    }
   </script>
 </body>
 </html>

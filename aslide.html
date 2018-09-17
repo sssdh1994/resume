@@ -22,7 +22,8 @@
       width: 20%;
       height: 100%; 
       border-right:1px solid black;
-      display:none
+      display:none;
+      background-color: rgb(227,227,227);
     }
     .box{
       width: 100%;
@@ -41,7 +42,7 @@
       width: 30px;
       height: 5px;
       background-color: black;
-      transition: 1s linear
+      transition: 0.5s linear
     }
     .shang{
       margin:12px 0 0 10px;
@@ -52,8 +53,7 @@
       margin:5px 0 0 10px;
       transform-origin:left;
     }
-
-    .button:hover .shang{
+    /*.button:hover .shang{
       transform-origin:left;
       transform:rotate(45deg) ;
         margin-left:15px
@@ -65,7 +65,7 @@
     }
     .button:hover .zhong{
       width:0 
-    }
+    }*/
   </style>
 </head>
 <body>
@@ -91,13 +91,22 @@
     var btn = document.getElementsByClassName('button')
     var aslide = document.getElementById('aslide')
     var isOut = false
+    var shang = document.getElementsByClassName('shang')
+    var zhong = document.getElementsByClassName('zhong')
+    var xia = document.getElementsByClassName('xia')
+    // 侧边栏点击按钮功能
     btn[0].onclick = function(e){
-      
       if(!isOut){
         aslide.setAttribute('style','display:block') 
+        shang[0].setAttribute('style','transform-origin:left;transform:rotate(45deg);margin-left:15px') 
+        zhong[0].setAttribute('style','width:0') 
+        xia[0].setAttribute('style','transform-origin:left;transform:rotate(-45deg);margin-left:15px')
         isOut = true
       }else{
         aslide.setAttribute('style','display:none') 
+        shang[0].setAttribute('style','margin:12px 0 0 10px;transform-origin:left') 
+        zhong[0].setAttribute('style','margin:5px 0 0 10px;transform-origin:left;')
+        xia[0].setAttribute('style','margin:5px 0 0 10px;transform-origin:left;')
         isOut = false
       }
     }
