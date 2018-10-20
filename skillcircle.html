@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="js/circle-progress.js"></script>
+  <style type="text/css">
+  body,html{
+    margin:0;
+    width: 100%;
+    height: 100%
+  }
+  .skill-container{
+    width:60%;
+    height: 60%;
+    position:absolute;
+    top:calc(50% - 30%);
+    left:calc(50% - 30%);
+    border:5px solid black;
+    transition:0.5s;
+    background-color:rgba(255,255,255,0);
+    display: flex;
+    justify-content: space-between;
+  }
+  #skill-box{
+    width:180px;
+    height:200px; 
+    perspective:500px;       
+  }
+  #skill-box div{
+    position:absolute;  
+    width:180px;
+    height:200px;
+    background:#fff;
+    backface-visibility:hidden;
+    transition: all 0.5s linear;
+    border:5px solid rgb(27,172,240);   
+    border-radius: 20px;   
+  }
+  #skill-box .front{
+    background:rgb(90,90,90);
+  }
+  #skill-box .back{
+    background:rgb(90,90,90);
+    transform:rotateX(180deg);
+  }
+  #skill-box:hover .front{
+    transform:rotateX(180deg);
+  }
+  #skill-box:hover .back{
+    transform:rotateX(360deg);
+  }
+  .first {
+    width: 180px;
+    position: relative;
+  }
+  .second {
+    width: 180px;
+    position: relative;
+  }
+  strong{
+    display: inline-block;
+    border:1px solid black;
+    border-radius: 140px;
+    width: 140px;
+    height: 140px;
+    line-height: 140px;
+    position: absolute;
+    left: calc(50% - 70px);
+    top: calc(50% - 70px);
+    vertical-align: middle;
+    text-align: center;
+  }
+  </style>
+</head>
+<body>
+  <!-- 这是canvas，不能选取 -->
+  <div class="skill-container">
+    <div>
+      <div class="first">
+        <strong class="demo-play-1"></strong>
+      </div>
+      <div id="skill-box">
+        <div class="front">正面</div>
+        <div class="back">反面</div>
+      </div>
+    </div>
+    <div>
+      <div class="second">
+        <strong class="demo-play-2"></strong>
+      </div>
+      <div id="skill-box">
+        <div class="front">正面</div>
+        <div class="back">反面</div>
+      </div>
+    </div>
+  </div>
+ 
+
+<script>
+  $('.first').circleProgress({
+    // 百分比
+    value: 0.6,
+    // 大小
+    size: 180,
+    // 线头圆润
+    lineCap:"round",
+    // 圆环占圆大小，无百分比
+    thickness:20,
+    fill: {
+      gradient: ["blue", "red","yellow"],
+      color: 'rgba(0, 0, 0, .5)'
+    }
+    }).on('circle-animation-progress', function(event, progress) {
+      // 画面静止时的百分比
+      $(this).find('strong').html(parseInt(60 * progress) + '<i>%</i>');
+  })
+  
+  $('.demo-play-1').mouseenter(function(){
+    $('.first').circleProgress({
+        value: 0.6
+    }).on('circle-animation-progress', function(event, progress) {
+      // mouseenter的百分比
+        $(this).find('strong').html(parseInt(60 * progress) + '<i>%</i>');
+    });
+  });
+
+  $('.second').circleProgress({
+    // 百分比
+    value: 0.6,
+    // 大小
+    size: 180,
+    // 线头圆润
+    lineCap:"round",
+    // 圆环占圆大小，无百分比
+    thickness:20,
+    fill: {
+      gradient: ["blue", "red","yellow"],
+      color: 'rgba(0, 0, 0, .5)'
+    }
+    }).on('circle-animation-progress', function(event, progress) {
+      // 画面静止时的百分比
+      $(this).find('strong').html(parseInt(60 * progress) + '<i>%</i>');
+  })
+  
+  $('.demo-play-2').mouseenter(function(){
+    $('.second').circleProgress({
+        value: 0.6
+    }).on('circle-animation-progress', function(event, progress) {
+      // mouseenter的百分比
+        $(this).find('strong').html(parseInt(60 * progress) + '<i>%</i>');
+    });
+  });
+
+</script>     
+</body>
+</html>

@@ -14,21 +14,21 @@
   <audio id="music" class="playing" src="faded.mp3"  autoplay volume = "0.2"   loop ></audio>
   <i class="iconfont icon-customerservice-fill" id="bofangqi" onclick="playAndPause()"></i>
   <i class="iconfont icon-heart-fill" onclick="document.getElementById('music').volume+=0.2"></i>
-  <i class="iconfont icon-Heart" onclick="document.getElementById('music').volume-=0.2"></i>
+  <i class="iconfont icon-heart" onclick="document.getElementById('music').volume-=0.2"></i>
   <div class="button">
     <div class="shang"></div>
     <div class="zhong"></div>
     <div class="xia"></div>
   </div>
-  <div id="aside">
+  <div id="aslide" >
     <div class="box">
-      <span><span>首页</span></span>
-      <span><span>个人介绍</span></span>
-      <span><span>学习经历</span></span>
-      <span><span>技能掌握</span></span>
-      <span><span>学习方式</span></span>
-      <span><span>联系本人</span></span>
-      <span><span>H5游戏</span></span>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
     </div>
   </div>
   <div class="swiper-container swiper-container-vertical">
@@ -60,7 +60,7 @@
         <div class="swiper-slide swiper-slide3">
           <!-- 第三页学习经历 -->
           <div class="bg bg3">
-            <!-- <div class="xian">
+            <div class="xian">
               <div id="tuozhuai"></div>
             </div>
             <div class="up">
@@ -72,17 +72,6 @@
             <div class="down">
               <p id="css">css</p>
               <p id="css-move">css</p>
-            </div> -->
-            <div class="card">
-              <div class="time-container">
-                <ul class="time-horizontal">
-                  <li><b></b><p>毕业</p></li>
-                  <li><b></b><p>学习</p></li>
-                  <li><b></b><p>公司</p></li>
-                  <li><b></b><p>学习</p></li>
-                </ul>
-              </div>
-              <div class="circleLight"></div>
             </div>
           </div>
         </div>
@@ -90,130 +79,15 @@
           <!-- 第四页技能掌握 -->
           <div class="bg bg4">
           <!-- 内容 -->
-            <div class="skill-container">
-              <!-- 这是canvas，不能选取 -->
-              <div>
-                <div class="first">
-                  <strong class="demo-play-1"></strong>
-                </div>
-                <div class="skill-box skill-box-1">
-                  <div class="front">
-                    <div class="front-content">
-                      <i class="iconfont icon-css"></i>
-                      <span>CSS</span>
-                    </div>
-                  </div>
-                  <div class="back">
-                    <ul>
-                      <li>熟练运用css及css3的新属性</li>
-                      <li>理解浏览器兼容性，熟悉常见的css hack</li>
-                      <li>掌握css3动画、形变、渐变等</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div class="second">
-                  <strong class="demo-play-2"></strong>
-                </div>
-                <div class="skill-box skill-box-2">
-                  <div class="front">
-                    <div class="front-content">
-                      <i class="iconfont icon-js"></i>
-                      <span>javascript</span>
-                    </div>
-                  </div>
-                  <div class="back">
-                    <ul>
-                      <li>理解js闭包，原型，原型链等原理</li>
-                      <li>对AJAX，josn，异步等相关技术熟悉</li>
-                      <li>可以自行编写js的方法库</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div class="third">
-                  <strong class="demo-play-3"></strong>
-                </div>
-                <div class="skill-box skill-box-3">
-                  <div class="front">
-                    <div class="front-content">
-                      <i class="iconfont icon-vuejs"></i>
-                      <span>Vue.js</span>
-                    </div>
-                  </div>
-                  <div class="back">
-                    <ul>
-                      <li>参照文档编写vue.js代码</li>
-                      <li>了解vue全家桶</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div class="fourth">
-                  <strong class="demo-play-4"></strong>
-                </div>
-                <div class="skill-box skill-box-4">
-                  <div class="front">
-                    <div class="front-content">
-                      <span style="line-height:200px">其它</span>
-                    </div>
-                  </div>
-                  <div class="back">
-                    <ul>
-                      <li>了解基本数据结构和算法，leetcode刷了至少100道题</li>
-                      <li>了解前端模块化与工程化</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
         <div class="swiper-slide swiper-slide5">
           <!-- 第五页学习方式 -->
           <div class="bg bg5">
-            <div>
-              <div id="container">
-                <div class="in1">
-                  <div>看过的书</div>
-                  <ul>
-                    <li>《21天学通JS》</li>
-                    <li>《css权威指南》</li>
-                    <li>《Eloquent》</li>
-                    <li>《head first》</li>
-                    <li>《html 与css》</li>
-                    <li>《html5+css3从入门到精通》</li>
-                    <li>《JS高级程序设计》</li>
-                    <li>《JS实战》</li>
-                  </ul>
-                </div>
-                <div class="in2">
-                  <div>正在看的书</div>
-                  <ul>
-                    <li>《你不知道的JavaScript》</li>
-                    <li>《深入理解ES6》</li>
-                    <li>《算法刷题》</li>
-                    <li>《图解HTTP》</li>
-                    <li>《CSS世界》</li>
-                    <li>《JavaScript权威指南》</li>
-                    <li>《Vue.js》</li>
-                  </ul>
-                </div>
-                <div class="in3">
-                  <div>学习讨论的网站</div>
-                  <ul>
-                    <li>知乎：<a href="www.zhihu.com">www.zhihu.com</a></li>
-                    <li>V2EX：<a href="www.v2ex.com">www.v2ex.com</a></li>
-                    <li>CSDN：<a href="www.csdn.net">www.csdn.net</a></li>
-                    <li>MDN：<a href="https://developer.mozilla.org/zh-CN/">国内镜像连接</a></li>
-                    <li>百度：<a href="www.baidu.com">www.baidu.com</a></li>
-                  </ul>
-                </div>
-              </div>
-              <p>包括但不仅限于以上</p>
+            <div id="container">
+              <div class="in1">1</div>
+              <div class="in2">2</div>
+              <div class="in3">3</div>
             </div>
           </div>
         </div>
@@ -252,62 +126,60 @@
     </div>
     <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
   </div>
-  <script src="js/jquery-1.11.0.min.js"></script>
-  <script src="js/circle-progress.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.js"></script>
   <script type="text/javascript">
     // 中间红色框拖拽
-    // document.onmousedown = function(){
-    //   debugger
-    // }
-  //   var tuozhuai=document.getElementById('tuozhuai');
-  //   var disx = 0
-  //   var disy = 0
-  //    tuozhuai.onmousedown=function (ev){
-  //     debugger
-  //     var oEvent=ev||event;
+    document.addEventListener('mousedown',function(){
+      debugger
+    })
+    var tuozhuai=document.getElementById('tuozhuai');
+    var disx = 0
+    var disy = 0
+     tuozhuai.onmousedown=function (ev){
+      debugger
+      var oEvent=ev||event;
       
-  //     disx=oEvent.clientX-tuozhuai.offsetLeft;
-  //     disy=oEvent.clientY-tuozhuai.offsetTop;
+      disx=oEvent.clientX-tuozhuai.offsetLeft;
+      disy=oEvent.clientY-tuozhuai.offsetTop;
       
-  //     document.onmousemove=function (ev){
-  //       var oEvent=ev||event;
-  //       var l=oEvent.clientX-disx;
-  //       var t=oEvent.clientY-disy;
-  //       var xian = document.getElementsByClassName('xian')[0].offsetWidth
-  //       var htmlmove = document.getElementById('html-move')
-  //       var cssmove = document.getElementById('css-move')
-  //       var jsmove = document.getElementById('js-move')
+      document.onmousemove=function (ev){
+        var oEvent=ev||event;
+        var l=oEvent.clientX-disx;
+        var t=oEvent.clientY-disy;
+        var xian = document.getElementsByClassName('xian')[0].offsetWidth
+        var htmlmove = document.getElementById('html-move')
+        var cssmove = document.getElementById('css-move')
+        var jsmove = document.getElementById('js-move')
         
-  //       if(l<0){
-  //         l=0;
-  //       }else if(l>xian-42) {
-  //         l=xian-42;
-  //       }
-  //       tuozhuai.style.left=l+'px';
-  // //       tuozhuai.style.top=t+'px';
-  //       if(l>=40){
-  //         htmlmove.style.opacity = '1'
-  //       }else {
-  //         htmlmove.style.opacity = '0'
-  //       }
-  //       if(l>120){
-  //         cssmove.style.opacity = '1'
-  //       }else {
-  //         cssmove.style.opacity = '0'
-  //       }
-  //       if(l>240){
-  //         jsmove.style.opacity = '1'
-  //       }else {
-  //         jsmove.style.opacity = '0'
-  //       }
-  //     };
+        if(l<0){
+          l=0;
+        }else if(l>xian-42) {
+          l=xian-42;
+        }
+        tuozhuai.style.left=l+'px';
+  //       tuozhuai.style.top=t+'px';
+        if(l>=40){
+          htmlmove.style.opacity = '1'
+        }else {
+          htmlmove.style.opacity = '0'
+        }
+        if(l>120){
+          cssmove.style.opacity = '1'
+        }else {
+          cssmove.style.opacity = '0'
+        }
+        if(l>240){
+          jsmove.style.opacity = '1'
+        }else {
+          jsmove.style.opacity = '0'
+        }
+      };
     
-  //   document.onmouseup=function (){
-  //     document.onmousemove=null;
-  //     document.onmouseup=null;
-  //   };
-  // };
+    document.onmouseup=function (){
+      document.onmousemove=null;
+      document.onmouseup=null;
+    };
+  };
     // 设置音乐播放器点击暂停函数
     var playAndPause =  function(){
       if(document.getElementById('music').className=="playing"){
@@ -324,22 +196,19 @@
       // 设置垂直方向
       direction: 'vertical',    
       // 设置是否循环
-      loop: true,               
+      // loop: true,               
       // 设置展示页面数量
       slidesPerView:1,          
       // 设置鼠标滑轮事件
-      mousewheel:true,          
+      // mousewheel:true,          
       // 设置键盘方向键事件
       // keyboard:true,     
-      // autoplayDisableOnInteraction:false,
-      // preventLinksPropagation : true,
-      // simulateTouch:true,
-      // 谷歌内核拖动事件禁止
+
       // 分页器
       pagination: {
         el: '.swiper-pagination',
-        // 分页器点击跳转
-        clickable: true,
+      // 分页器点击跳转
+        // clickable: true,
       } 
     })    
 
@@ -372,23 +241,23 @@
       $('.card').css('transform','scale(1.03) translate(' + (block.CX * 0.05) + 'px, ' + (block.CY * 0.05) + 'px) rotateX(' + (block.CY * 0.05) + 'deg) rotateY(' + (block.CX * 0.05) + 'deg)')
     }, 20);
     var btn = document.getElementsByClassName('button')
-    var aside = document.getElementById('aside')
+    var aslide = document.getElementById('aslide')
     var isOut = false
     var shang = document.getElementsByClassName('shang')
     var zhong = document.getElementsByClassName('zhong')
     var xia = document.getElementsByClassName('xia')
-    var boxGoTo = document.querySelectorAll('.box span span')
+    var boxGoTo = document.querySelectorAll('.box div')
     // 侧边栏点击按钮功能
     btn[0].onclick = function(e){
       if(!isOut){
-        aside.setAttribute('style','width:20%') 
+        aslide.setAttribute('style','width:20%') 
         shang[0].setAttribute('style','transform-origin:left;transform:rotate(45deg);margin-left:15px') 
         zhong[0].setAttribute('style','width:0') 
         xia[0].setAttribute('style','transform-origin:left;transform:rotate(-45deg);margin-left:15px')
         btn[0].setAttribute('style','background-color:rgb(51,122,183);')
         isOut = true
       }else{
-        aside.setAttribute('style','width:0%') 
+        aslide.setAttribute('style','width:0%') 
         shang[0].setAttribute('style','margin:12px 0 0 10px;transform-origin:left;') 
         zhong[0].setAttribute('style','margin:5px 0 0 10px;transform-origin:left;')
         xia[0].setAttribute('style','margin:5px 0 0 10px;transform-origin:left;')
@@ -426,8 +295,6 @@
       swiperActive[0].setAttribute('style','transform: translate3d(0px, -4473px, 0px);transition-duration: 300ms')
       btn[0].onclick()
     }
-
   </script>
-  <script type="text/javascript" src='js/skill.js'></script>
 </body>
 </html>
